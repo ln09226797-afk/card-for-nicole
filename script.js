@@ -75,7 +75,8 @@ cards.forEach(card => {
     }
     if (card.video) {
       banner += `<div class="play-btn">${playSvg}</div>`;
-    }`r`n    a.innerHTML = `
+    }
+    a.innerHTML = `
       <div class="card-heading">
         <div class="card-title">${card.title}</div>
         <div class="card-sub">${card.sub || ""}</div>
