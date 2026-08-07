@@ -440,3 +440,75 @@ html, body {
     width: 34%;
   }
 }
+
+.cards {
+  width: 72%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 8px;
+  padding-bottom: 10px;
+  align-items: stretch;
+}
+
+.card {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.card.big {
+  flex: none;
+  min-height: 0;
+}
+
+.card.big .card-banner {
+  height: 52%;
+}
+
+.card.big .card-body {
+  padding: 3px 6px;
+}
+
+.card.big .card-body .card-title {
+  font-size: 11px;
+}
+
+.card.big .card-body .card-sub {
+  font-size: 8px;
+}
+
+.card:nth-child(3),
+.card:nth-child(4) {
+  grid-row: 3;
+  height: 48px;
+  flex: none;
+}
+
+.card:nth-child(3) {
+  grid-column: 1;
+  border-radius: 16px 0 0 16px;
+  border-right-width: 1px;
+}
+
+.card:nth-child(4) {
+  grid-column: 2;
+  border-radius: 0 16px 16px 0;
+  border-left-width: 1px;
+}
+
+.card:nth-child(3) .card-text,
+.card:nth-child(4) .card-text {
+  padding: 0 8px 0 30px;
+}
+
+.card:nth-child(3) .card-thumb,
+.card:nth-child(4) .card-thumb {
+  left: 8px;
+}
+
+@media (max-width: 520px) {
+  .cards {
+    width: 72%;
+  }
+}
