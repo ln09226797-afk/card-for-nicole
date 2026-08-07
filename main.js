@@ -100,3 +100,31 @@ if (pointerFine) {
     });
   });
 }
+
+const statGrid = document.querySelector(".stat-grid");
+if (statGrid) {
+  const statObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      statGrid.classList.add("is-counting");
+      statGrid.querySelectorAll("strong").forEach((node) => {
+        const original = node.textContent.trim();
+        const number = parseInt(original.replace(/\D/g, ""), 10);
+        if (!Number.isNaN(number)) {
+          const suffix = original.replace(/[0-9]/g, "");
+          const duration = 900;
+          const start = performance.now();
+          const update = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            node.textContent = String(Math.round(number * eased)) + suffix;
+            if (progress < 1) window.requestAnimationFrame(update);
+          };
+          window.requestAnimationFrame(update);
+        }
+      });
+      observer.disconnect();
+    });
+  }, { threshold: 0.45 });
+  statObserver.observe(statGrid);
+}
