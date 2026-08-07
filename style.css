@@ -368,3 +368,75 @@ html, body {
     width: 68%;
   }
 }
+
+.cards {
+  width: 31%;
+  gap: 5px;
+  padding-bottom: 8px;
+}
+
+.card {
+  border-width: 1px;
+  border-radius: 12px;
+}
+
+.card.big {
+  flex: 1.45;
+}
+
+.card.big .card-banner {
+  border-radius: 11px 11px 0 0;
+}
+
+.card.big .card-body {
+  padding: 2px 6px;
+}
+
+.card.big .card-body .card-title {
+  font-size: 10px;
+}
+
+.card.big .card-body .card-sub {
+  font-size: 8px;
+}
+
+.play-btn {
+  width: 22px;
+  height: 22px;
+}
+
+.play-btn svg {
+  width: 10px;
+  height: 10px;
+}
+
+.card-thumb {
+  width: 18px;
+  height: 18px;
+  left: 6px;
+  font-size: 9px;
+}
+
+.card-text {
+  padding: 0 22px;
+}
+
+.card-title {
+  font-size: 9px;
+}
+
+.card-sub {
+  font-size: 7px;
+}
+
+.card-more {
+  right: 6px;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 520px) {
+  .cards {
+    width: 34%;
+  }
+}
