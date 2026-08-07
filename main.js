@@ -1,4 +1,4 @@
-ï»¿const menuToggle = document.getElementById("menuToggle");
+const menuToggle = document.getElementById("menuToggle");
 const topnav = document.querySelector(".topnav");
 const inquiryForm = document.getElementById("inquiryForm");
 const toast = document.getElementById("toast");
@@ -33,7 +33,7 @@ inquiryForm.addEventListener("submit", (event) => {
     formData.get("message") || "",
   ].join("\n");
   window.location.href = `mailto:nicolegan@intco.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  showToast("Opening your email appâ€¦");
+  showToast("Opening your email app¡­");
 });
 
 const companyVideo = document.querySelector(".company-video");
@@ -127,4 +127,13 @@ if (statGrid) {
     });
   }, { threshold: 0.45 });
   statObserver.observe(statGrid);
+}
+const portrait = document.querySelector(".editorial-portrait");
+if (portrait) {
+  portrait.addEventListener("animationend", (event) => {
+    if (event.animationName === "portrait-in") {
+      portrait.style.animation = "none";
+      portrait.classList.add("portrait-ready");
+    }
+  });
 }
