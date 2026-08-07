@@ -512,3 +512,72 @@ html, body {
     width: 72%;
   }
 }
+
+.cards {
+  width: 72%;
+  grid-template-rows: minmax(0, 1fr) 48px;
+  gap: 8px;
+  padding-bottom: 8px;
+}
+
+.card.big {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.card.big .card-heading {
+  width: 100%;
+  height: 34%;
+  min-height: 34px;
+  flex: 0 0 34%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 6px;
+  background: rgba(15, 105, 175, 0.92);
+  overflow: hidden;
+}
+
+.card.big .card-heading .card-title {
+  font-size: 12px;
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.card.big .card-heading .card-sub {
+  font-size: 8px;
+  line-height: 1.1;
+  margin-top: 2px;
+}
+
+.card.big .card-banner {
+  width: 100%;
+  height: 66%;
+  flex: 1 1 66%;
+  min-height: 0;
+  border-radius: 0;
+}
+
+.card.big .card-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card.big .card-banner > div:first-child {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (max-width: 520px) {
+  .cards {
+    width: 72%;
+  }
+}

@@ -7,16 +7,16 @@ const socials = [
 const cards = [
   {
     type: "big",
-    title: "INTCO Product Catalogue",
-    sub: "PDF · Document",
+    title: "产品目录册",
+    sub: "产品目录册 · PDF",
     image: "catalog-cover.svg",
     url: "catalog.pdf",
     newTab: true,
   },
   {
     type: "big",
-    title: "INTCO Protects Your Health",
-    sub: "INTCO Medical · Company Video",
+    title: "英科保护你的健康",
+    sub: "INTCO Medical · 公司视频",
     video: true,
     url: "https://www.youtube.com/watch?v=axp2NGaremE",
     newTab: true,
@@ -75,13 +75,12 @@ cards.forEach(card => {
     }
     if (card.video) {
       banner += `<div class="play-btn">${playSvg}</div>`;
-    }
-    a.innerHTML = `
-      <div class="card-banner">${banner}</div>
-      <div class="card-body">
+    }`r`n    a.innerHTML = `
+      <div class="card-heading">
         <div class="card-title">${card.title}</div>
         <div class="card-sub">${card.sub || ""}</div>
       </div>
+      <div class="card-banner">${banner}</div>
     `;
   } else {
     a.innerHTML = `
