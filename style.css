@@ -653,3 +653,163 @@ html, body {
     max-height: 44px;
   }
 }
+
+.video-brand {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  column-gap: 4px;
+  background: linear-gradient(135deg, #0a4b8a, #1a7fc9);
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.video-brand-mark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,255,255,0.95);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.video-brand-name {
+  font-size: 18px;
+}
+
+.video-brand-sub {
+  width: 100%;
+  text-align: center;
+  font-size: 8px;
+  letter-spacing: 2px;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+.cards {
+  width: 62%;
+  max-width: 300px;
+  grid-template-rows: 110px 28px;
+  gap: 5px 7px;
+  padding-bottom: 5px;
+}
+
+.card.big {
+  height: 110px;
+  min-height: 110px;
+  max-height: 110px;
+  border-radius: 9px;
+}
+
+.card.big .card-heading {
+  height: 42%;
+  flex-basis: 42%;
+  min-height: 0;
+  padding: 2px;
+}
+
+.card.big .card-heading .card-title {
+  font-size: 7px;
+}
+
+.card.big .card-heading .card-sub {
+  font-size: 6px;
+  margin-top: 1px;
+}
+
+.card.big .card-banner {
+  height: 58%;
+  flex-basis: 58%;
+}
+
+.card:nth-child(3),
+.card:nth-child(4) {
+  height: 28px;
+  min-height: 28px;
+  max-height: 28px;
+  border-radius: 9px;
+}
+
+.card:nth-child(3) .card-text,
+.card:nth-child(4) .card-text {
+  padding: 0 5px 0 20px;
+}
+
+.card:nth-child(3) .card-thumb,
+.card:nth-child(4) .card-thumb {
+  width: 13px;
+  height: 13px;
+  left: 5px;
+  font-size: 7px;
+}
+
+.card:nth-child(3) .card-title,
+.card:nth-child(4) .card-title {
+  font-size: 7px;
+}
+
+.card:nth-child(3) .card-sub,
+.card:nth-child(4) .card-sub {
+  font-size: 6px;
+}
+
+.card:nth-child(3) .card-more,
+.card:nth-child(4) .card-more {
+  right: 5px;
+  font-size: 7px;
+}
+
+.play-btn {
+  width: 18px;
+  height: 18px;
+}
+
+.play-btn svg {
+  width: 8px;
+  height: 8px;
+}
+
+.video-brand-mark {
+  width: 10px;
+  height: 10px;
+  border-width: 1px;
+  font-size: 8px;
+}
+
+.video-brand-name {
+  font-size: 9px;
+}
+
+.video-brand-sub {
+  font-size: 5px;
+  letter-spacing: 1px;
+  margin-top: 1px;
+}
+
+@media (max-width: 520px) {
+  .cards {
+    width: 62%;
+    grid-template-rows: 100px 26px;
+  }
+
+  .card.big {
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+  }
+
+  .card:nth-child(3),
+  .card:nth-child(4) {
+    height: 26px;
+    min-height: 26px;
+    max-height: 26px;
+  }
+}
