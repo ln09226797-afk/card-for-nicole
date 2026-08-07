@@ -581,3 +581,75 @@ html, body {
     width: 72%;
   }
 }
+
+.cards {
+  width: 74%;
+  max-width: 430px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: 220px 48px;
+  gap: 8px 12px;
+  align-content: start;
+  justify-content: center;
+  padding-bottom: 8px;
+}
+
+.card.big {
+  width: 100%;
+  height: 220px;
+  min-height: 220px;
+  max-height: 220px;
+  border-radius: 16px;
+}
+
+.card.big .card-heading {
+  height: 42%;
+  min-height: 0;
+  flex: 0 0 42%;
+  padding: 5px 4px;
+}
+
+.card.big .card-heading .card-title {
+  font-size: 11px;
+}
+
+.card.big .card-heading .card-sub {
+  font-size: 8px;
+}
+
+.card.big .card-banner {
+  height: 58%;
+  flex: 1 1 58%;
+  min-height: 0;
+}
+
+.card.big .card-body {
+  display: none;
+}
+
+.card:nth-child(3),
+.card:nth-child(4) {
+  width: 100%;
+  height: 48px;
+  min-height: 48px;
+  max-height: 48px;
+}
+
+@media (max-width: 520px) {
+  .cards {
+    width: 74%;
+    grid-template-rows: 200px 44px;
+  }
+
+  .card.big {
+    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
+  }
+
+  .card:nth-child(3),
+  .card:nth-child(4) {
+    height: 44px;
+    min-height: 44px;
+    max-height: 44px;
+  }
+}
