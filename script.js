@@ -7,18 +7,27 @@ const socials = [
 const cards = [
   {
     type: "big",
-    title: "产品目录册",
-    sub: "产品目录册 · PDF",
+    title: "Product Catalogue",
+    sub: "INTCO Product Catalogue · PDF",
     image: "catalog-cover.svg",
     url: "catalog.pdf",
     newTab: true,
   },
   {
     type: "big",
-    title: "英科保护你的健康",
-    sub: "INTCO Medical · 公司视频",
+    title: "INTCO Protects Your Health",
+    sub: "Company Video · intcomedical.com",
+    image: "company-building.png",
     video: true,
     url: "https://www.youtube.com/watch?v=axp2NGaremE",
+    newTab: true,
+  },
+  {
+    type: "small",
+    title: "Company Website",
+    sub: "www.intcomedical.com",
+    icon: "🌐",
+    url: "https://www.intcomedical.com/",
     newTab: true,
   },
   {
@@ -71,7 +80,7 @@ cards.forEach(card => {
     if (card.image) {
       banner = `<img src="${card.image}" alt="${card.title}">`;
     } else {
-      banner = `<div style="width:100%;height:100%;background:linear-gradient(135deg,#0a4b8a,#1a7fc9);display:flex;align-items:center;justify-content:center;"><span style="font-size:36px;">🏭</span></div>`;
+      banner = `<div class="video-brand"><span class="video-brand-mark">+</span><span class="video-brand-name">INTCO</span><span class="video-brand-sub">MEDICAL</span></div>`;
     }
     if (card.video) {
       banner += `<div class="play-btn">${playSvg}</div>`;
