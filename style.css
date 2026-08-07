@@ -19,7 +19,11 @@ html, body {
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  background: radial-gradient(ellipse at center, #176d96 0%, #0b3855 34%, #061d32 68%, #03111f 100%);
+  background-color: #061d32;
+  background-image: linear-gradient(rgba(3, 20, 40, 0.28), rgba(3, 20, 40, 0.42)), url("side-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .video-bg {
