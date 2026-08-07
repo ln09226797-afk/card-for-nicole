@@ -19,7 +19,7 @@ html, body {
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  background: #061522;
+  background: radial-gradient(ellipse at center, #176d96 0%, #0b3855 34%, #061d32 68%, #03111f 100%);
 }
 
 .video-bg {
@@ -138,10 +138,13 @@ html, body {
 
 .cards {
   flex: 1;
+  width: 68%;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding-bottom: 8px;
+  gap: 10px;
+  padding-bottom: 14px;
   justify-content: space-evenly;
   min-height: 0;
 }
@@ -161,6 +164,7 @@ html, body {
   position: relative;
   overflow: hidden;
   min-height: 44px;
+  width: 100%;
   flex: 1;
   min-height: 0;
 }
@@ -287,4 +291,10 @@ html, body {
 .toast.show {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 520px) {
+  .cards {
+    width: 72%;
+  }
 }
