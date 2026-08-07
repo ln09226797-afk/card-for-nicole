@@ -54,3 +54,49 @@ if (companyVideo && companyVideoFrame && "IntersectionObserver" in window) {
   companyVideoFrame.src = companyVideoFrame.dataset.src;
   companyVideo.classList.add("is-playing");
 }
+
+document.documentElement.classList.add("js-ready");
+
+const revealItems = document.querySelectorAll("[data-reveal]");
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14 });
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+}
+
+const tiltItems = document.querySelectorAll("[data-tilt]");
+const pointerFine = window.matchMedia("(pointer: fine)").matches;
+if (pointerFine) {
+  document.body.classList.add("has-pointer");
+  const cursorGlow = document.querySelector(".cursor-glow");
+  window.addEventListener("pointermove", (event) => {
+    if (cursorGlow) {
+      cursorGlow.style.left = `${event.clientX}px`;
+      cursorGlow.style.top = `${event.clientY}px`;
+    }
+  }, { passive: true });
+
+  tiltItems.forEach((item) => {
+    item.addEventListener("pointermove", (event) => {
+      const bounds = item.getBoundingClientRect();
+      const x = (event.clientX - bounds.left) / bounds.width;
+      const y = (event.clientY - bounds.top) / bounds.height;
+      const rotateX = (0.5 - y) * 5;
+      const rotateY = (x - 0.5) * 6;
+      item.style.setProperty("--spot-x", `${x * 100}%`);
+      item.style.setProperty("--spot-y", `${y * 100}%`);
+      item.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+    item.addEventListener("pointerleave", () => {
+      item.style.transform = "";
+    });
+  });
+}
