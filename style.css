@@ -20,7 +20,7 @@ html, body {
   z-index: 0;
   overflow: hidden;
   background-color: #061d32;
-  background-image: linear-gradient(rgba(3, 20, 40, 0.28), rgba(3, 20, 40, 0.42)), url("side-background.jpg");
+  background-image: url("side-background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -42,11 +42,10 @@ html, body {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg,
-    rgba(0, 15, 30, 0.15) 0%,
-    rgba(0, 15, 30, 0.1) 25%,
-    rgba(0, 15, 30, 0.4) 60%,
-    rgba(0, 8, 16, 0.8) 100%);
+  background: radial-gradient(ellipse 32% 100% at center,
+    rgba(0, 15, 30, 0.18) 0%,
+    rgba(0, 15, 30, 0.08) 58%,
+    transparent 100%);
 }
 
 .share-btn {
