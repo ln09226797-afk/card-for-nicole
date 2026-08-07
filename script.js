@@ -1,4 +1,4 @@
-﻿const socials = [
+const socials = [
   { icon: "wa",   label: "WhatsApp", url: "https://wa.me/8618726096797" },
   { icon: "in",   label: "LinkedIn", url: "https://www.linkedin.com/in/langni-gan0922" },
   { icon: "mail", label: "Email",    url: "mailto:nicolegan@intco.com" },
@@ -15,10 +15,10 @@ const cards = [
   },
   {
     type: "big",
-    title: "Anhui Factory Tour",
-    sub: "INTCO Anhui Manufacturing Facility",
+    title: "INTCO Protects Your Health",
+    sub: "INTCO Medical · Company Video",
     video: true,
-    url: "https://www.youtube.com/watch?v=N5JyWVXB5xk",
+    url: "https://www.youtube.com/watch?v=axp2NGaremE",
     newTab: true,
   },
   {
