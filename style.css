@@ -19,6 +19,7 @@ html, body {
   inset: 0;
   z-index: 0;
   overflow: hidden;
+  background: #061522;
 }
 
 .video-bg {
@@ -26,11 +27,11 @@ html, body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
+  width: auto;
   height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  object-fit: contain;
   object-position: center center;
-  image-rendering: auto;
 }
 
 .video-overlay {
