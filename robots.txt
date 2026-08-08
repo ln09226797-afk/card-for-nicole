@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nicolegan.com/sitemap.xml
+Sitemap: https://ln09226797-afk.github.io/card-for-nicole/sitemap.xml
