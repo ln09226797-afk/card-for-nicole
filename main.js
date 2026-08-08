@@ -1,6 +1,5 @@
 const menuToggle = document.getElementById("menuToggle");
 const topnav = document.querySelector(".topnav");
-const inquiryForm = document.getElementById("inquiryForm");
 const toast = document.getElementById("toast");
 
 function showToast(message) {
@@ -21,38 +20,17 @@ document.querySelectorAll(".topnav a").forEach((link) => {
   });
 });
 
-inquiryForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const formData = new FormData(inquiryForm);
-  const subject = `European glove enquiry from ${formData.get("name") || "a website visitor"}`;
-  const body = [
-    `Name: ${formData.get("name") || ""}`,
-    `Company: ${formData.get("company") || ""}`,
-    `Interest: ${formData.get("interest") || ""}`,
-    "",
-    formData.get("message") || "",
-  ].join("\n");
-  window.location.href = `mailto:nicolegan@intco.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  showToast("Opening your email app¡­");
-});
 
 const companyVideo = document.querySelector(".company-video");
 const companyVideoFrame = document.querySelector(".company-video-frame");
+const videoPoster = document.querySelector(".video-poster");
 
-if (companyVideo && companyVideoFrame && "IntersectionObserver" in window) {
-  const videoObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        companyVideoFrame.src = companyVideoFrame.dataset.src;
-        companyVideo.classList.add("is-playing");
-        videoObserver.unobserve(companyVideo);
-      }
-    });
-  }, { threshold: 0.35 });
-  videoObserver.observe(companyVideo);
-} else if (companyVideoFrame) {
-  companyVideoFrame.src = companyVideoFrame.dataset.src;
-  companyVideo.classList.add("is-playing");
+if (companyVideo && companyVideoFrame && videoPoster) {
+  videoPoster.addEventListener("click", () => {
+    companyVideoFrame.src = companyVideoFrame.dataset.src;
+    companyVideo.classList.add("is-playing");
+    videoPoster.setAttribute("aria-hidden", "true");
+  });
 }
 
 document.documentElement.classList.add("js-ready");
@@ -135,5 +113,14 @@ if (portrait) {
       portrait.style.animation = "none";
       portrait.classList.add("portrait-ready");
     }
+  });
+}
+
+const motionToggle = document.getElementById("motionToggle");
+if (motionToggle) {
+  motionToggle.addEventListener("click", () => {
+    const paused = document.body.classList.toggle("motion-paused");
+    motionToggle.setAttribute("aria-pressed", String(paused));
+    motionToggle.textContent = paused ? "Resume animations" : "Pause animations";
   });
 }
